@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
 import { Button } from './ui/button'
-import BookCover from './BookCover'
+import BookCover from './CoverBook'
 
-const BookOverview = ({ title, author, genre, rating, total_copies, available_copies, description, color, cover, }: Book) => {
+const BookOverview = ({ title, author, genre, rating, total_copies, available_copies, description, coverUrl, coverColor }: Book) => {
   return (
     <section className='book-overview'>
       <div className='flex flex-1 flex-col gap-5'>
@@ -60,15 +60,15 @@ const BookOverview = ({ title, author, genre, rating, total_copies, available_co
           <BookCover
             variant="wide"
             className="z-10"
-            coverColor={color}
-            coverUrl={cover}
+            coverColor={coverColor}
+            coverUrl={coverUrl}
           />
 
           <div className='absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden'>
             <BookCover
               variant="wide"
-              coverColor={color}
-              coverUrl={cover}
+              coverColor={coverColor}
+              coverUrl={coverUrl}
             />
           </div>
         </div>

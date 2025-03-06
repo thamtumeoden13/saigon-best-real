@@ -7,9 +7,9 @@ interface Book {
     total_copies: number;
     available_copies: number;
     description: string;
-    color: string;
-    cover: string;
-    video: string;
+    coverColor: string;
+    coverUrl: string;
+    videoUrl: string;
     summary: string;
     isLoadnedBook?: boolean;
 }
