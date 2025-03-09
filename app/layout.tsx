@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-// import { Toaster } from "@/components/ui/toaster";
 
 import localFont from "next/font/local";
 import { ReactNode } from "react";
+import { Toaster } from "@/components/ui/sonner";
 // import { SessionProvider } from "next-auth/react";
 // import { auth } from "@/auth";
+
 
 const ibmPlexSans = localFont({
   src: [
@@ -40,7 +41,7 @@ const RootLayout = async ({ children }: { children: ReactNode }) => {
         >
           {children}
 
-          {/* <Toaster /> */}
+          <Toaster />
         </body>
       {/* </SessionProvider> */}
     </html>
