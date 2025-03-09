@@ -1,7 +1,14 @@
+import { auth } from '@/auth';
 import Image from 'next/image'
+import { redirect } from 'next/navigation';
 import { ReactNode } from 'react'
 
-const Layout = ({ children }: { children: ReactNode }) => {
+const Layout = async ({ children }: { children: ReactNode }) => {
+
+    const session = await auth();
+
+    if (session) redirect("/");
+
     return (
         <main className='auth-container'>
             <section className='auth-form'>
@@ -21,7 +28,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             </section>
 
             <section className='auth-illustration'>
-                <Image 
+                <Image
                     src="/images/auth-illustration.png"
                     alt='image illustrations'
                     height={1000}

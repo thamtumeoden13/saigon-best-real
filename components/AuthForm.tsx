@@ -10,6 +10,8 @@ import { Button } from './ui/button'
 import Link from 'next/link'
 import { FIELD_NAMES, FIELD_TYPES } from '@/lib/constants'
 import ImageUpload from './ImageUpload'
+import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 
 interface Props<T extends FieldValues> {
   schema: ZodType<T>;
@@ -20,6 +22,8 @@ interface Props<T extends FieldValues> {
 
 const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit }: Props<T>) => {
 
+  const router = useRouter()
+
   const isSignin = type === "SIGN_IN" ? true : false
 
   const form: UseFormReturn<T> = useForm<z.infer<typeof schema>>({
@@ -27,8 +31,23 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
     defaultValues: defaultValues as DefaultValues<T>
   });
 
-  const handleSubmit: SubmitHandler<T> = async () => {
+  const handleSubmit: SubmitHandler<T> = async (data) => {
+    const result = await onSubmit(data);
 
+    if (result.success) {
+      console.log('success')
+      toast.success('Success', {
+        description: isSignin
+          ? 'You have successfully signed in.'
+          : 'You have successfully signed up.'
+      })
+      router.push("/");
+    } else {
+      console.log('error')
+      toast.error(`Error ${isSignin ? "signing in" : "signing up"}`, {
+        description: result.error ?? "An error occurred"
+      })
+    }
   }
 
   return (
@@ -59,7 +78,7 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
                   <FormLabel className='capitalize'>{FIELD_NAMES[field.name as keyof typeof FIELD_NAMES]}</FormLabel>
                   <FormControl>
                     {field.name == 'universityCard'
-                      ? (<ImageUpload  onFileChange={field.onChange}/>)
+                      ? (<ImageUpload onFileChange={field.onChange} />)
                       : (
                         <Input
                           required
