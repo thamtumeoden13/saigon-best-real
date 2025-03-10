@@ -13,7 +13,7 @@ export const users = pgTable('users', {
     password: text('password').notNull(),
     status: STATUS_ENUM('status').default('PENDING'),
     role: ROLE_ENUM('role').default('USER'),
-    lasActivity: date("last_activity").defaultNow(),
+    lasActivityDate: date("last_activity_date").defaultNow(),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
 });
 
