@@ -20,7 +20,7 @@ export const sendEmail = async ({ email, subject, message }: { email: string; su
             provider: resend({ token: config.env.upstash.qstashToken }),
         },
         body: {
-            from: 'Mr.Vu <hello.cococstudio.com>',
+            from: 'Mr.Vu <contact@cococstudio.com>',
             to: [email],
             subject,
             html: message,
