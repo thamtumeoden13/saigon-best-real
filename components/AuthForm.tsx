@@ -34,6 +34,8 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
   const handleSubmit: SubmitHandler<T> = async (data) => {
     const result = await onSubmit(data);
 
+    console.log('handleSubmit', result)
+
     if (result.success) {
       console.log('success')
       toast.success('Success', {

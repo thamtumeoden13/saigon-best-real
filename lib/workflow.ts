@@ -8,7 +8,6 @@ export const workflowClient = new WorkflowClient({
     token: config.env.upstash.qstashToken,
 });
 
-
 export const qstashClient = new QStashClient({
     token: config.env.upstash.qstashToken,
 });
