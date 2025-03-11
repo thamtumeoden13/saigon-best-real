@@ -3,7 +3,7 @@ import BookOverview from '@/components/BookOverview'
 import { Button } from '@/components/ui/button'
 import { db } from '@/database/drizzle'
 import { users } from '@/database/schema'
-import { sampleBooks } from '@/lib/constants'
+import { sampleBooks } from '@/constants'
 import React from 'react'
 
 const Home = async () => {

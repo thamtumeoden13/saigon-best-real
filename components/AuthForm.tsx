@@ -8,7 +8,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import Link from 'next/link'
-import { FIELD_NAMES, FIELD_TYPES } from '@/lib/constants'
+import { FIELD_NAMES, FIELD_TYPES } from '@/constants'
 import ImageUpload from './ImageUpload'
 import { toast } from 'sonner'
 import { useRouter } from 'next/navigation'
