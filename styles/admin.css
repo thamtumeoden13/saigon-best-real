@@ -84,11 +84,11 @@
 
 @layer components {
   .admin-container {
-    @apply flex w-[calc(100%-264px)] flex-1 flex-col bg-light-300 p-5 sm:p-10;
+    @apply flex w-[calc(100%-264px)] flex-1 flex-col bg-light-300! p-5 sm:p-10;
   }
 
   .back-btn {
-    @apply mb-10 w-fit border border-light-300 bg-white text-xs font-medium text-dark-200 hover:bg-light-300;
+    @apply mb-10 w-fit border border-light-300! bg-white! text-xs font-medium text-dark-200! hover:bg-light-300!;
   }
 
   /* Confirmation Dialog */
@@ -96,21 +96,21 @@
     @apply font-semibold text-sm shadow-none w-full;
   }
   .confirm-trigger:hover {
-    @apply opacity-70;
+    @apply opacity-70!;
   }
 
   .confirm-approve {
-    @apply bg-green-100 text-green-800;
+    @apply bg-green-100! text-green-800!;
   }
   .confirm-approve:hover {
-    @apply bg-green-100/70;
+    @apply bg-green-100/70!;
   }
 
   .confirm-reject {
-    @apply bg-red-100 text-red-800;
+    @apply bg-red-100! text-red-800!;
   }
   .confirm-reject:hover {
-    @apply bg-red-100/70;
+    @apply bg-red-100/70!;
   }
 
   .confirm-content {
@@ -126,44 +126,44 @@
   }
 
   .confirm-btn {
-    @apply w-full min-h-14 rounded-xl font-bold text-base text-light-800;
+    @apply w-full min-h-14 rounded-xl font-bold text-base text-light-800!;
   }
 
   /* Book Form */
   .book-form_input {
-    @apply min-h-14 border border-gray-100 bg-light-600 p-4 text-base font-semibold placeholder:font-normal placeholder:text-slate-500;
+    @apply min-h-14 border border-gray-100! bg-light-600! p-4 text-base font-semibold placeholder:font-normal placeholder:text-slate-500!;
   }
 
   .book-form_btn {
-    @apply min-h-14 w-full bg-primary-admin;
+    @apply min-h-14 w-full bg-primary-admin!;
   }
   .book-form_btn:hover {
-    @apply bg-primary-admin/95;
+    @apply bg-primary-admin/95!;
   }
 
   /* Home Page */
   .view-btn {
-    @apply bg-light-300 rounded-md text-primary-admin font-semibold shadow-none;
+    @apply bg-light-300! rounded-md text-primary-admin! font-semibold shadow-none;
   }
   .view-btn:hover {
-    @apply bg-light-300/80;
+    @apply bg-light-300/80!;
   }
 
   .add-new-book_btn {
-    @apply mt-7 mb-3 bg-light-300 py-4 px-3 flex flex-row items-center rounded-xl gap-4;
+    @apply mt-7 mb-3 bg-light-300! py-4 px-3 flex flex-row items-center rounded-xl gap-4;
   }
 
   .add-new-book_btn div:first-child {
-    @apply size-12 bg-white rounded-full flex justify-center items-center;
+    @apply size-12 bg-white! rounded-full flex justify-center items-center;
   }
 
   .add-new-book_btn p:first-child {
-    @apply font-semibold text-lg text-dark-400;
+    @apply font-semibold text-lg text-dark-400!;
   }
 
   /* Statistics */
   .stat {
-    @apply bg-white rounded-xl p-5 space-y-5 flex-1;
+    @apply bg-white! rounded-xl p-5 space-y-5 flex-1;
   }
 
   .stat-info {
@@ -171,20 +171,20 @@
   }
 
   .stat-label {
-    @apply font-medium text-base text-light-500 whitespace-nowrap;
+    @apply font-medium text-base text-light-500! whitespace-nowrap;
   }
 
   .stat-count {
-    @apply font-semibold text-3xl text-dark-400;
+    @apply font-semibold text-3xl text-dark-400!;
   }
 
   /* Book Stripe */
   .book-stripe {
-    @apply flex flex-row gap-4 bg-light-300 p-4 rounded-lg;
+    @apply flex flex-row gap-4 bg-light-300! p-4 rounded-lg;
   }
 
   .book-stripe .title {
-    @apply font-semibold text-base text-dark-400 line-clamp-1;
+    @apply font-semibold text-base text-dark-400! line-clamp-1;
   }
 
   .book-stripe .author {
@@ -192,15 +192,15 @@
   }
 
   .book-stripe .author p:first-child {
-    @apply text-light-500 text-sm line-clamp-1;
+    @apply text-light-500! text-sm line-clamp-1;
   }
 
   .book-stripe .author div {
-    @apply size-1 rounded-full bg-light-500;
+    @apply size-1 rounded-full bg-light-500!;
   }
 
   .book-stripe .author p:last-child {
-    @apply text-light-500 text-sm;
+    @apply text-light-500! text-sm;
   }
 
   .book-stripe .user {
@@ -212,7 +212,7 @@
   }
 
   .book-stripe .user .avatar p {
-    @apply text-xs text-dark-200;
+    @apply text-xs text-dark-200!;
   }
 
   .book-stripe .borrow-date {
@@ -220,12 +220,12 @@
   }
 
   .book-stripe .borrow-date p {
-    @apply text-xs text-dark-200;
+    @apply text-xs text-dark-200!;
   }
 
   /* Color Picker */
   .color-picker {
-    @apply flex min-h-14 flex-row items-center gap-3 rounded-md border border-gray-100 bg-light-600 p-4 text-base font-semibold text-dark-400;
+    @apply flex min-h-14 flex-row items-center gap-3 rounded-md border border-gray-100! bg-light-600! p-4 text-base font-semibold text-dark-400!;
   }
 
   .hex-input {
@@ -238,7 +238,7 @@
 
   /* Error Fallback */
   .error-fallback {
-    @apply p-4 bg-red-100 text-red-700 rounded-md;
+    @apply p-4 bg-red-100! text-red-700 rounded-md;
   }
 
   .error-fallback h2 {
@@ -252,24 +252,24 @@
 
   /* Search */
   .admin-search {
-    @apply flex border border-gray-100 min-h-14 items-center gap-1 rounded-md bg-light-600 px-4 lg:max-w-md w-full;
+    @apply flex border border-gray-100! min-h-14 items-center gap-1 rounded-md bg-light-600! px-4 lg:max-w-md w-full;
   }
 
   .admin-search_input {
-    @apply w-full border-0 shadow-none bg-transparent outline-none focus:outline-none focus:ring-0 focus:border-0;
+    @apply w-full border-0 shadow-none bg-transparent! outline-none focus:outline-none focus:ring-0 focus:border-0;
   }
 
   /* Sidebar */
   .admin-sidebar {
-    @apply sticky left-0 top-0 flex h-dvh flex-col justify-between bg-white px-5 pb-5 pt-10;
+    @apply sticky left-0 top-0 flex h-dvh flex-col justify-between bg-white! px-5 pb-5 pt-10;
   }
 
   .admin-sidebar .logo {
-    @apply flex flex-row items-center gap-2 border-b border-dashed border-primary-admin/20 pb-10 max-md:justify-center;
+    @apply flex flex-row items-center gap-2 border-b border-dashed border-primary-admin/20! pb-10 max-md:justify-center;
   }
 
   .admin-sidebar .logo h1 {
-    @apply text-2xl font-semibold text-primary-admin max-md:hidden;
+    @apply text-2xl font-semibold text-primary-admin! max-md:hidden;
   }
 
   .admin-sidebar .link {
@@ -281,20 +281,20 @@
   }
 
   .admin-sidebar .user {
-    @apply my-8 flex w-full flex-row gap-2 rounded-full border border-light-400 px-6 py-2 shadow-sm max-md:px-2;
+    @apply my-8 flex w-full flex-row gap-2 rounded-full border border-light-400! px-6 py-2 shadow-sm max-md:px-2;
   }
 
   /* User Card */
   .user-card {
-    @apply w-40 bg-light-300 py-4 px-3 flex justify-center items-center flex-col rounded-xl text-center;
+    @apply w-40 bg-light-300! py-4 px-3 flex justify-center items-center flex-col rounded-xl text-center;
   }
 
   .user-card .name {
-    @apply font-medium mt-3 text-dark-400 line-clamp-1 w-full break-words;
+    @apply font-medium mt-3 text-dark-400! line-clamp-1 w-full break-words;
   }
 
   .user-card .email {
-    @apply text-light-500 text-sm line-clamp-1 break-words w-full;
+    @apply text-light-500! text-sm line-clamp-1 break-words w-full;
   }
 }
 
