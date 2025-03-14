@@ -42,7 +42,8 @@ interface Props {
   placeholder: string;
   folder: string;
   variant: 'dark' | 'light';
-  onFileChange: (filePath: string) => void
+  onFileChange: (filePath: string) => void;
+  value?: string
 }
 
 const FileUpload = ({
@@ -51,10 +52,11 @@ const FileUpload = ({
   placeholder,
   folder,
   variant,
-  onFileChange
+  onFileChange,
+  value
 }: Props) => {
   const ikUploadRef = useRef(null);
-  const [file, setFile] = useState<{ filePath: string } | null>(null);
+  const [file, setFile] = useState<{ filePath: string | undefined }>({ filePath: value ?? undefined });
 
   const [progress, setProgress] = useState(0);
 
@@ -117,6 +119,7 @@ const FileUpload = ({
         onSuccess={onSuccess}
         useUniqueFileName={true}
         validateFile={onValidate}
+        onUploadStart={() => setProgress(0)}
         onUploadProgress={({ loaded, total }) => {
           const percent = Math.round((loaded / total) * 100);
           console.log('IKUpload', { loaded, total, percent })
@@ -162,7 +165,7 @@ const FileUpload = ({
         (type === 'image' ? (
           <IKImage
             path={file.filePath}
-            alt={file.filePath}
+            alt={file.filePath ?? ''}
             width={500}
             height={300}
           />) : type === 'video' ? (
