@@ -11,7 +11,7 @@ import { set } from "zod";
 
 
 const { env: {
-  imagekit: { publickey, urlEndpoint },
+  imagekit: { publicKey, urlEndpoint },
 } } = config;
 
 
@@ -112,7 +112,7 @@ const FileUpload = ({
   }
 
   return (
-    <ImageKitProvider publicKey={publickey} urlEndpoint={urlEndpoint} authenticator={authenticator}>
+    <ImageKitProvider publicKey={publicKey} urlEndpoint={urlEndpoint} authenticator={authenticator}>
       <IKUpload
         ref={ikUploadRef}
         onError={onError}

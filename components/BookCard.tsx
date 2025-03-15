@@ -5,20 +5,20 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Button } from './ui/button'
 
-const BookCard = ({ id, title, genre, coverColor, coverUrl, isLoadnedBook = false }: Book) => {
+const BookCard = ({ id, title, genre, coverColor, coverUrl, isLoanedBook = false }: Book) => {
   return (
-    <li className={cn(isLoadnedBook && 'xs:w-52 w-full')}>
+    <li className={cn(isLoanedBook && 'xs:w-52 w-full')}>
       <Link href={`/books/${id}`}
-        className={cn(isLoadnedBook && 'w-full flex flex-col items-center')}
+        className={cn(isLoanedBook && 'w-full flex flex-col items-center')}
       >
         <BookCover coverColor={coverColor} coverUrl={coverUrl} />
 
-        <div className={cn('mt-4', !isLoadnedBook && 'xs:max-w-40 max-w-28')}>
+        <div className={cn('mt-4', !isLoanedBook && 'xs:max-w-40 max-w-28')}>
           <p className='book-title'>{title}</p>
           <p className='book-genre'>{genre}</p>
         </div>
 
-        {isLoadnedBook && (
+        {isLoanedBook && (
           <div className='nt-3 w-full'>
             <div className='book-loaned'>
               <Image
