@@ -1,1 +1,0 @@
-ALTER TABLE "users" RENAME COLUMN "last_activity" TO "last_activity_date";
