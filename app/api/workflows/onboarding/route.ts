@@ -25,9 +25,9 @@ const getUserState = async (email: string): Promise<UserState> => {
 
   if (user.length === 0) return "non-active";
 
-  const lasActivityDate = new Date(user[0].lasActivityDate!);
+  const lastActivityDate = new Date(user[0].lastActivityDate!);
   const now = new Date();
-  const timeDiff = now.getTime() - lasActivityDate.getTime();
+  const timeDiff = now.getTime() - lastActivityDate.getTime();
 
   if (timeDiff > THREE_DAYS_IN_MS && timeDiff < THIRTY_DAYS_IN_MS) return "non-active";
 
