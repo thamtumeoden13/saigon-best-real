@@ -42,7 +42,7 @@ const AuthForm = <T extends FieldValues>({ type, schema, defaultValues, onSubmit
       toast.success('Success', {
         description: isSignin
           ? 'You have successfully signed in.'
-          : 'You have successfully signed up.'
+          : 'You have successfully signed up.',
       })
       router.push("/");
     } else {
